@@ -1,5 +1,5 @@
 {% set name = "enfrosp_enmapboxapp" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/enfrosp_enmapboxapp-{{ version }}.tar.gz
-  sha256: 6cff017e6d914c75cba5016392bff4e472fb2fbb4849c52366cdb71560cc1c8c
+  sha256: 65976daf87b4e7d8016df831b8006b18c61ab4196caa56ed33ffccd74744700d
 
 build:
   noarch: python
@@ -21,8 +21,10 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
+    - enfrosp >=0.1.2
     - packaging
     - psutil
+    - qgis >=3.40.3
 
 test:
   imports:
