@@ -1,5 +1,5 @@
 {% set name = "enfrosp_enmapboxapp" %}
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/enfrosp_enmapboxapp-{{ version }}.tar.gz
-  sha256: cbee74bba775ff1bd534a732fde69e2dfad11bcf7c9b7b854b95fbd888baf51c
+  sha256: da8dbfb462432510b6b8047f32fc812db35c719122d99b1fbea50a89e928e2a5
 
 build:
   noarch: python
