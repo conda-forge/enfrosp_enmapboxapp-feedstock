@@ -1,0 +1,49 @@
+schema_version: 1
+
+context:
+  name: enfrosp_enmapboxapp
+  version: "0.2.2"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/enfrosp_enmapboxapp-${{ version }}.tar.gz
+  sha256: da8dbfb462432510b6b8047f32fc812db35c719122d99b1fbea50a89e928e2a5
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=61.2
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - enfrosp >=0.1.2
+    - packaging
+    - psutil
+    - qgis >=3.40.3
+
+tests:
+  - python:
+      imports:
+        - enfrosp_enmapboxapp
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  summary: A graphical user interface for EnFROSP as an add-in for the EnMAP-Box QGIS plugin
+  license: GPL-3.0-or-later
+  license_file: LICENSE
+  homepage: https://git.gfz-potsdam.de/EnMAP/GFZ_Tools_EnMAP_BOX/enfrosp_enmapboxapp
+
+extra:
+  recipe-maintainers:
+    - danschef
