@@ -24,7 +24,7 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    - enfrosp >=0.1.2
+    - enfrosp >=0.2.2
     - packaging
     - psutil
     - qgis >=3.40.3
