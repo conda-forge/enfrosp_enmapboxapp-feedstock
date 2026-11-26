@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: enfrosp_enmapboxapp
-  version: "0.2.3"
+  version: "0.3.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/enfrosp_enmapboxapp-${{ version }}.tar.gz
-  sha256: ff64a6db1f1dfc09d293dbd0a42c86786e125a2a1d4877894922ed0983e0dc97
+  sha256: 11edd6321204e75470c7f212211dbeba532a0d6df367a02f6c2e5f7648e14745
 
 build:
   number: 0
@@ -19,8 +19,8 @@ build:
 
 requirements:
   host:
+    - hatchling
     - python ${{ python_min }}.*
-    - setuptools >=61.2
     - pip
   run:
     - python >=${{ python_min }}
@@ -28,6 +28,7 @@ requirements:
     - enfrosp >=0.2.2
     - packaging
     - psutil
+    - qgis >3.40.3
 
 tests:
   - python:
