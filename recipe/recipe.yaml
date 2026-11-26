@@ -28,6 +28,7 @@ requirements:
     - enfrosp >=0.2.2
     - packaging
     - psutil
+    - qgis >3.40.3
 
 tests:
   - python:
